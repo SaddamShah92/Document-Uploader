@@ -1,0 +1,46 @@
+    {% extends 'base.html' %}
+    {% block start %}
+    
+    <h1>This is Index Page</h1>
+    <a href="/about/">About
+
+    </a>
+    
+    |
+    <a href="/contact/">Contact
+        
+    </a>
+
+
+    <table>
+        <tr>
+            <th>Sr. No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>can vote</th>
+        </tr>
+
+        {% for people in peoples %}
+        <tr>
+            <td>{{forlop.counter}}</td>
+            <td>{{people.name}}</td>
+            <td>{{people.age}}</td>
+            <td>
+                {% if people.age >= 18 %}
+                can vote
+                {% else %}
+                cannot vote
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+    <p>
+        {% autoescape on %}
+        {{ vegtables }}
+        {% endautoescape %}
+    </p>
+
+{% endblock %}
